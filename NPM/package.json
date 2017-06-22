@@ -1,0 +1,33 @@
+{
+  "name": "dragonballpersonajes",
+  "version": "0.1.0",
+  "description": "Personajes BASICOS de Dragon Ball",
+  "main": "lib/dragonballpersonajes.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test" : "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuansu0897/JSpuro.git"
+  },
+  "keywords": [
+    "npm",
+    "DragonBall",
+    "aprendiendo",
+    "intentoDeAPI",
+    "intentoDeAlgo"
+  ],
+  "author": "joshua saucedo <joshuansu0897@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshuansu0897/JSpuro/issues"
+  },
+  "homepage": "https://github.com/joshuansu0897/JSpuro#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.2",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
+}
