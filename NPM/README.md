@@ -19,9 +19,9 @@ npm install dragonballpersonajes
 ## Uso
 
 ```
-import dragonballpersonajes from 'dragonballpersonajes'
+const Dragon = require('dragonballpersonajes').default
 
-const Goku = new dragonballpersonajes("Goku")
+const Goku = new Dragon("Goku")
 Goku.nombre // "Goku"
 Goku.raza // "Sayayin"
 Goku.transformaciones // ["Normal ", "kaioken ", ..., "ssj dios", "ssj dios azul"]
