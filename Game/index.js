@@ -1,4 +1,4 @@
-const niveles = 15
+let niveles = 15
 let teclas = generarTeclas(niveles)
 
 function generarTeclas(niveles) {
@@ -70,9 +70,12 @@ function activate(keyCode, shift, opts = {}) {
   el.classList.add('active')
   if(shift){
     s.classList.add('active')
-    s.classList.add('success')
   }
   if (opts.success) {
+    if(shift){
+      s.classList.add('active')
+      s.classList.add('success')
+    }
     el.classList.add('success')
   } else if (opts.fail) {
     if(shift){
