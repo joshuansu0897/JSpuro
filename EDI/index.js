@@ -7,9 +7,12 @@ module.exports = function (FFA) {
     split.forEach(e => {
         getDataLine(e, obj);
     })
+
+    //clearObject(obj)
     return obj
 }
 
+let TRACER;
 function getDataLine(line, obj) {
     let data;
     if (line.startsWith("FFA")) {
@@ -35,14 +38,20 @@ function getDataLine(line, obj) {
         obj.ReferenceNumberSRI = data[1]
         obj.SupplementaryShippingInformationSRI = data[2]
         obj.SupplementaryShippingInformationSRI2 = data[3]
-    } else if (line.startsWith("^([0-9]{3}-)$")) {
+    } else if (new RegExp("^([0-9]{3}-)$").test(line.substring(0, 4))) {
         console.log("Es el que inicia con el 'airline prefix' linea 2")
-    } else if (line.startsWith("/")) {
-        console.log("inicia con /")
     } else if (line.startsWith("LH")) {
         console.log("esta es para la tercera linea inicia con CarrierCode FlightNumber")
+    } else if (line.startsWith("/")) {
+        console.log("inicia con /")
     } else {
         console.log(line)
         console.log("No esta previsto")
     }
+}
+
+function clearObject(obj) {
+    return JSON.parse(JSON.stringify(obj));
+    //Object.keys(obj).forEach(key => obj[key] === undefined || obj[key] === '' ? delete obj[key] : '');
+    //Object.keys(obj).forEach(key => obj[key] === undefined && delete obj[key])
 }
