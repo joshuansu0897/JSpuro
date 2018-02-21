@@ -59,7 +59,11 @@ function siguienteNivel(nivelActual) {
       activate(ev.keyCode, ev.shiftKey, { fail: true })
       setTimeout(() => activate(teclaActual, sh), 600)
       window.removeEventListener('keydown', onkeydown)
-      alert('Pierdes')
+      setTimeout(() => {
+        if(confirm("Pierdes.\nQuieres jugar otra?")){
+          location.reload();
+        }
+      }, 2000)      
     }
   }
 }
